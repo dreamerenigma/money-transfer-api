@@ -11,10 +11,10 @@ import { entities } from './utils/typeorm';
 		TypeOrmModule.forRoot({
 			type: 'mysql',
 			host: process.env.MYSQL_DB_HOST,
-			port: parseInt(process.env.MY_SQL_DB_PORT),
-			username: process.env.MY_SQL_USERNAME,
-			password: process.env.MY_SQL_PASSWORD,
-			database: process.env.MY_SQL_NAME,
+			port: parseInt(process.env.MYSQL_DB_PORT),
+			username: process.env.MYSQL_DB_USERNAME,
+			password: process.env.MYSQL_DB_PASSWORD,
+			database: process.env.MYSQL_DB_NAME,
 			synchronize: true,
 			entities,
 		}),
@@ -24,5 +24,4 @@ import { entities } from './utils/typeorm';
 	controllers: [],
 	providers: [],
 })
-
 export class AppModule {}
