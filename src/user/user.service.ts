@@ -1,14 +1,14 @@
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { getUserSelectors } from "src/utils/constants";
-import { hashPassword } from "src/utils/helpers";
-import { User } from "src/utils/typeorm";
+import { Repository } from "typeorm";
+import { getUserSelectors } from "../utils/constants";
+import { hashPassword } from "../utils/helpers";
+import { User } from "../utils/typeorm";
 import { 
 	CreateUserParams, 
 	FindUserOptions, 
 	FindUserParams, 
 } from "src/utils/types/queries";
-import { Repository } from "typeorm";
 import { UserFoundException } from "./exceptions/UserFoundException";
 import { IUserService } from './user';
 

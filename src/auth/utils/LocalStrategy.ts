@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Inject } from "@nestjs/common";
 import { PassportStrategy } from "@nestjs/passport";
 import { Strategy } from "passport-local";
-import { Services } from "src/utils/constants";
+import { Services } from "../../utils/constants";
 import { IAuthService } from "../auth";
 
 @Injectable()

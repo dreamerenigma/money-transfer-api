@@ -1,13 +1,12 @@
 import { HttpException, HttpStatus, Inject, Injectable } from "@nestjs/common";
-import { IUserService } from "src/user/user";
-import { UserModule } from "src/user/user.module";
-import { Services } from "src/utils/constants";
-import { compareHash } from "src/utils/helpers";
-import { User } from "src/utils/typeorm";
+import { IUserService } from "../user/user";
+import { Services } from "../utils/constants";
+import { compareHash } from "../utils/helpers";
+import { User } from "../utils/typeorm";
 import { 
 	CreateUserParams, 
 	UserCredentialsParams,
-} from "src/utils/types/queries";
+} from "../utils/types/queries";
 import { IAuthService } from "./auth";
 
 @Injectable()
