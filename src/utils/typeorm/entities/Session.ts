@@ -1,4 +1,4 @@
-import { ISession } from "connect-typeorm/out";
+import { ISession } from 'connect-typeorm';
 import { 
 	Index, 
 	Column, 

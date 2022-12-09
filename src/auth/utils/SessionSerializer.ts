@@ -5,7 +5,7 @@ import { Services } from "src/utils/constants";
 import { User } from "src/utils/typeorm";
 
 @Injectable()
-export class SessionSeriaizer extends PassportSerializer {
+export class SessionSerializer extends PassportSerializer {
 	constructor(
 		@Inject(Services.USERS)
 		private readonly userService: IUserService,

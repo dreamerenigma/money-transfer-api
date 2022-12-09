@@ -3,8 +3,8 @@ import { UserModule } from "src/user/user.module";
 import { Services } from "src/utils/constants";
 import { AuthController } from "./auth.controller";
 import { AuthService } from "./auth.service";
-import { SessionSeriaizer } from "./dtos/SesssionSerializer";
 import { LocalStrategy } from "./utils/LocalStrategy";
+import { SessionSerializer } from "./utils/SessionSerializer";
 
 @Module({
 	imports: [UserModule],
@@ -14,7 +14,7 @@ import { LocalStrategy } from "./utils/LocalStrategy";
 			provide: Services.AUTH,
 			useClass: AuthService,
 		},
-		SessionSeriaizer,
+		SessionSerializer,
 		LocalStrategy,
 	],
 })

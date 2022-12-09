@@ -1,5 +1,5 @@
 import { Controller, Post } from "@nestjs/common";
-import { Routes } from "src/utils/constants";
+import { Routes } from "../utils/constants";
 
 @Controller(Routes.USERS)
 export class UserController {}

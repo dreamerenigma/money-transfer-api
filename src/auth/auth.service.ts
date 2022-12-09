@@ -20,7 +20,6 @@ export class AuthService implements IAuthService {
 			{ username: params.username },
 			{ selectPassword: true },
 		);
-		console.log(user);
 		const isPasswordValid = await compareHash(params.password, user.password);
 		if (!isPasswordValid)
 			throw new HttpException('Invalid Credentials', HttpStatus.FORBIDDEN);
