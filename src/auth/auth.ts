@@ -1,5 +1,5 @@
-import { User } from "src/utils/typeorm";
-import { CreateUserParams, UserCredentialsParams } from "src/utils/types/queries";
+import { User } from "../utils/typeorm";
+import { CreateUserParams, UserCredentialsParams } from "../utils/types/queries";
 
 export interface IAuthService {
 	validateUser(params: UserCredentialsParams): Promise<User>;
