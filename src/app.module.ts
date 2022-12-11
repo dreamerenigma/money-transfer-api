@@ -3,6 +3,8 @@ import { ConfigModule } from '@nestjs/config/dist';
 import { PassportModule } from '@nestjs/passport';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
+import { StripeModule } from './stripe/stripe.module';
+import { OnboardingModule } from './onboarding/onboarding.module';
 import { UserModule } from './user/user.module';
 import { entities } from './utils/typeorm';
 
@@ -22,6 +24,8 @@ import { entities } from './utils/typeorm';
 		}),
 		AuthModule,
 		UserModule,
+		OnboardingModule,
+		StripeModule,
 	],
 	controllers: [],
 	providers: [],
