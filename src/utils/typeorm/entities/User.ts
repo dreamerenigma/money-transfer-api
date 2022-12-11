@@ -3,8 +3,11 @@ import {
 	Column, 
 	CreateDateColumn, 
 	Entity, 
+	JoinColumn, 
+	OneToOne, 
 	PrimaryGeneratedColumn,
 } from "typeorm";
+import { StripeAccount } from "./StripeAccount";
 
 @Entity({ name: 'users' })
 export class User {
@@ -26,4 +29,8 @@ export class User {
 
 	@CreateDateColumn({ name: 'created_at'})
 	createdAt: Date;
+
+	@OneToOne(() => StripeAccount)
+	@JoinColumn()
+	stripeAccount?: StripeAccount;
 }
