@@ -1,9 +1,11 @@
-import { Body, Controller, Inject, Post, UseGuards } from "@nestjs/common";
+import { Body, Controller, Get, Inject, Post, UseGuards } from "@nestjs/common";
 import { instanceToPlain } from "class-transformer";
+import { AuthUser } from "../utils/decorators";
+import { User } from "../utils/typeorm";
 import { Routes, Services } from "../utils/constants";
 import { IAuthService } from "./auth";
 import { RegisterUserDto } from "./dtos/RegisterUser.dto";
-import { LocalAuthGuard } from "./utils/Guards";
+import { AuthenticatedGuard, LocalAuthGuard } from "./utils/Guards";
 
 @Controller(Routes.AUTH)
 export class AuthController {
@@ -22,5 +24,11 @@ export class AuthController {
 	@UseGuards(LocalAuthGuard)
 	async login() {
 		return 'OK';
+	}
+
+	@Get('status')
+	@UseGuards(AuthenticatedGuard)
+	status(@AuthUser() user: User) {
+		return user;
 	}
 }
